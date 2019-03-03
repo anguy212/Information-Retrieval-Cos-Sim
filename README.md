@@ -1,7 +1,7 @@
 # Information-Retrieval-Cos-Sim
 ## Overview
 This program runs the queries in query_list.txt with 73 documents in ap89_collection. A results files contains the 
-"<Query Number> Q0 <doc number> <rank of similarity> <score>"
+"/<Query Number/> Q0 /<doc number/> /<rank of similarity/> /<score/>"
 ## StemmingAndStopping
 The parsing will take in relevant information from both query_list.txt and ap89_collection, excluding stopwords and 
 ## Getting TF IDF
@@ -16,9 +16,9 @@ divided by </br>
 squareRoot((<tf "bob" from Q>^2 + <tf "burger" from Q>^2)*(<tf "bob" from D>^2 + <tf "burger" from D>^2) ) </br>
   The closer the CosSim is to 1, the more similar the document and query is.
 ## Results
-The results from CosSimilarity are listed in results_file.txt. The results will be in this form "<Query Number> Q0 <doc number> <rank of similarity> <score>". 
-  <Query Number> will indicate which Query is being compared. </br>
-  <doc number> will indicate which Document is being compared. </br>
-  <rank of similarity> is a number ranking how close the document is to the query compared to the other documents in the
+The results from CosSimilarity are listed in results_file.txt. The results will be in this form "/<Query Number/> Q0 /<doc number/> /<rank of similarity/> /<score/>". 
+  /<Query Number/> will indicate which Query is being compared. </br>
+  /<doc number/> will indicate which Document is being compared. </br>
+  /<rank of similarity/> is a number ranking how close the document is to the query compared to the other documents in the
     collection; 1 will be most similar, 100 will be the least similar </br>
-  <score> is the cosine similarity score of the document and query </br>
+  /<score/> is the cosine similarity score of the document and query </br>
