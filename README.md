@@ -17,8 +17,7 @@ squareRoot(<tf "bob" from Q>^2 + <tf "burger" from Q>^2)*(<tf "bob" from D>^2 + 
   The closer the CosSim is to 1, the more similar the document and query is.
 ## Results
 The results from CosSimilarity are listed in results_file.txt. The results will be in this form "QueryNumber Q0 docNumber rankOfSimilarity score EXP" </br>
-  {QueryNumber} will indicate which Query is being compared. </br>
-  {docNumber} will indicate which Document is being compared. </br>
-  {rankOfSimilarity} is a number ranking how close the document is to the query compared to the other documents in the
-    collection; 1 will be most similar, 100 will be the least similar </br>
-  {score} is the cosine similarity score of the document and query </br>
+* {QueryNumber} will indicate which Query is being compared. </br>
+* {docNumber} will indicate which Document is being compared. </br>
+* {rankOfSimilarity} is a number ranking how close the document is to the query compared to the other documents in the collection; 1 will be most similar, 100 will be the least similar </br>
+* {score} is the cosine similarity score of the document and query </br>
