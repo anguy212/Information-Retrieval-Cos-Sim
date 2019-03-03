@@ -2,23 +2,23 @@
 ## Overview
 This program runs the queries in query_list.txt with 73 documents in ap89_collection. A results files contains the 
 "<Query Number> Q0 <doc number> <rank of similarity> <score>"
+## StemmingAndStopping
+The parsing will take in relevant information from both query_list.txt and ap89_collection, excluding stopwords and 
 ## Getting TF IDF
 The queries and documents are parsed and put into respective dictionaries and placed into a class (CollectionOfFiles) which
 will calculate the indexes. There will be functions in this class which will return TF and IDF values if word searched for
 and documend ID is entered.
-## Part 2
-Part two contains three python files. 
-* IndexA.py <br />
-IndexA program will read in the txt files in data folder and create an index which keeps track of the frequency of every word in each file, excluding stop words. When you run the indexA file, it will automatically display the index in console. For each word in the collection, it will display the word, then doc number with the frequency in each doc number in pairs. If a doc number is not listed, the word does not occur in the doc. An example is as follows: <br />
-WORD -----> disciplines <br />
-pair:  20 1 <br />
-pair:  17 2  
-* IndexB.py <br />
-Index B program will read in the txt file in data folder and create an index which keeps track of how many words there are in each file, excluding stop words. When you run the indexB file, it will automatically display the index in console. For each document number, there is a number to track how many words appears in it. An example is as follows: <br />
-1 369 <br />
-* tfidf.py <br />
-tfidf file program will make the indexes above and use them to calculate tf, idf, and tf-idf weights. The program will prompt the user to enter a search word. Then if the search word is in the collection, it will generate a posting of tf, idf, tf-idf weights for the term in each document even if some weights are 0. The user needs to enter 'QUIT' for the loop to stop. An example for the postings of document 2 is as follows: </br>
-In document 2 the weights are: </br>
-The tf weight for word is:  0.3333333333333333 </br>
-The idf weight for word is:  1.584962500721156 </br>
-The tf-idf weight for word is:  0.5283208335737186 
+## Getting Cos Similarity
+Using the TF and IDF functions Cos Similarity is calculated as follows:</br>
+* Query = < "bob", "burger" >, Document = < "bob", "bam", "burger"> </br>
+CosSim = <tf "bob" from Q> * <tf "bob" from D> * <idf "bob" from Q> + <tf "burger" from Q> * <tf "burger" from D> * <idf "burger" from Q> </br>
+divided by </br>
+squareRoot((<tf "bob" from Q>^2 + <tf "burger" from Q>^2)*(<tf "bob" from D>^2 + <tf "burger" from D>^2) ) </br>
+  The closer the CosSim is to 1, the more similar the document and query is.
+## Results
+The results from CosSimilarity are listed in results_file.txt. The results will be in this form "<Query Number> Q0 <doc number> <rank of similarity> <score>". 
+  <Query Number> will indicate which Query is being compared. </br>
+  <doc number> will indicate which Document is being compared. </br>
+  <rank of similarity> is a number ranking how close the document is to the query compared to the other documents in the
+    collection; 1 will be most similar, 100 will be the least similar </br>
+  <score> is the cosine similarity score of the document and query </br>
